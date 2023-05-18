@@ -2,6 +2,7 @@ const todoInput = document.querySelector(".todo-input");
 const todoList = document.querySelector(".todo-list");
 
 const savedTodoList = JSON.parse(localStorage.getItem("saved-items"));
+console.log("savedTodo", savedTodoList);
 
 const createTodo = (storageData) => {
   let todoContents = todoInput.value;
@@ -12,6 +13,7 @@ const createTodo = (storageData) => {
   const newLi = document.createElement("li");
   const newSpan = document.createElement("span");
   const newBtn = document.createElement("button");
+  // const newDel = document.createTextNode("div");
 
   newBtn.addEventListener("click", () => {
     newLi.classList.toggle("complete");
@@ -35,12 +37,6 @@ const createTodo = (storageData) => {
   saveItemsFn();
 };
 
-if (savedTodoList) {
-  for (let i = 0; i < savedTodoList.length; i++) {
-    createTodo(savedTodoList[i]);
-  }
-}
-
 const keyCodeCheck = () => {
   if (window.event.keyCode === 13 && todoInput.value !== "") {
     createTodo();
@@ -59,7 +55,7 @@ const saveItemsFn = () => {
   const saveItems = [];
   for (let i = 0; i < todoList.children.length; i++) {
     const todoObj = {
-      todo: todoList.children[i].querySelector("span").textContent,
+      contents: todoList.children[i].querySelector("span").textContent,
       complete: todoList.children[i].classList.contains("complete"),
     };
     saveItems.push(todoObj);
@@ -67,6 +63,10 @@ const saveItemsFn = () => {
   saveItems.length === 0
     ? localStorage.removeItem("saved-items")
     : localStorage.setItem("saved-items", JSON.stringify(saveItems));
-  // localStorage.setItem = ("saved-items", JSON.stringify(saveItems));
-  // console.log(saveItems);
 };
+
+if (savedTodoList) {
+  for (let i = 0; i < savedTodoList.length; i++) {
+    createTodo(savedTodoList[i]);
+  }
+}
