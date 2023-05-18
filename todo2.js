@@ -64,7 +64,7 @@ const saveItemFn = () => {
     };
     saveItems.push(todoObj);
   }
-  saveItems === ""
+  saveItems.length === 0
     ? localStorage.removeItem("saved-items")
     : localStorage.setItem("saved-items", JSON.stringify(saveItems));
 };
