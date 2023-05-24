@@ -68,6 +68,7 @@ li .text {
 
 li .delete {
   font-size: 18px;
+  cursor: pointer;
 }
 
 .delete-button {
