@@ -14,6 +14,5 @@
 
 ☑️ 재사용 가능한 코드
 
----
 
-![todo_video](https://github.com/sally-dot/ToDo/assets/75000708/2a98ebb4-4890-42a5-b7a2-8396b3cff547)
+![todo_video](https://github.com/sally-dot/ToDo/assets/75000708/6182c684-016b-42be-b099-be6f6b8f9476)
