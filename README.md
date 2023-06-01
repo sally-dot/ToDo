@@ -16,4 +16,7 @@
 
 ---
 
+👉🏻  todo 리스트를 사용해보세요!  https://sally-dot.github.io/todo/
+
 ![todo_video](https://github.com/sally-dot/ToDo/assets/75000708/6182c684-016b-42be-b099-be6f6b8f9476)
+
